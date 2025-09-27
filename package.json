@@ -1,0 +1,47 @@
+{
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:astro": "astro build",
+    "docs": "astro dev"
+  },
+  "dependencies": {
+    "@redocly/cli": "^2.2.2",
+    "@tanstack/react-query": "^5.83.0",
+    "@tanstack/react-query-devtools": "^5.83.0",
+    "axios": "^1.10.0",
+    "clsx": "^2.1.1",
+    "nanoid": "^5.1.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "3.24.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/starlight": "^0.36.0",
+    "@eslint/js": "^9.36.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.14",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "astro": "^5.14.1",
+    "astro-mermaid": "^1.0.4",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "laravel-vite-plugin": "^2.0.1",
+    "mermaid": "^11.12.0",
+    "prettier": "^3.6.2",
+    "sharp": "^0.34.4",
+    "stylelint": "^16.24.0",
+    "stylelint-prettier": "^5.0.3",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.1",
+    "vite": "^7.1.7",
+    "vite-bundle-analyzer": "^1.2.3"
+  }
+}

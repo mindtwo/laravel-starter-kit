@@ -24,6 +24,7 @@ jobs:
         uses: withastro/action@v3
         with:
           package-manager: 'npm'
+          path: './docs'
           build-cmd: 'npm run build:astro'
 
   deploy:

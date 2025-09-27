@@ -40,3 +40,4 @@ npm-debug.log
 /storage/app/modules/modules.used
 .astro/
 .output/
+dist/

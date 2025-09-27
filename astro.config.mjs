@@ -17,7 +17,7 @@ export default defineConfig({
       social: [
         {
           icon: 'github',
-          label: 'Github',
+          label: 'GitHub',
           href: 'https://github.com/mindtwo/laravel-starter-kit',
         },
       ],

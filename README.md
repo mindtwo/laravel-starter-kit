@@ -23,12 +23,8 @@
   <br>
 
   <p align="center">
-    <a href="https://laravel.com/">
-      <img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" height="45" />
-    </a>
-    <a href="https://react.dev/">
-      <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" height="45" />
-    </a>
+    <img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" height="45" />
+    <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" height="45" />
   </p>
 </div>
 <br />

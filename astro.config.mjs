@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 
 export default defineConfig({
   site: 'https://mindtwo.github.io',
-  base: '/laravel-starter-kit',
+  base: '/sample-app-starter-kit',
   srcDir: './docs/src',
   publicDir: './docs/public',
   outDir: './docs/dist',
@@ -13,7 +13,7 @@ export default defineConfig({
       theme: 'forest',
     }),
     starlight({
-      title: 'Laravel Starter Kit',
+      title: 'SampleApp Starter Kit',
       social: [
         {
           icon: 'github',

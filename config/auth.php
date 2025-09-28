@@ -1,6 +1,5 @@
 <?php declare(strict_types=1);
 
-use App\Models\User;
 use Chiiya\FilamentAccessControl\Models\FilamentUser;
 
 return [
@@ -78,7 +77,7 @@ return [
     | Resetting Passwords
     |--------------------------------------------------------------------------
     |
-    | These configuration options specify the behavior of Laravel's password
+    | These configuration options specify the behavior of SampleApp's password
     | reset functionality, including the table utilized for token storage
     | and the user provider that is invoked to actually retrieve users.
     |

@@ -1,7 +1,7 @@
-import { useResources } from '@/features/laravel/api/getResources';
+import { useResources } from '@/features/sample-app/api/getResources';
 import { LoadingSpinner } from '@/components/LoadingSpinner';
 
-export function Laravel() {
+export function SampleApp() {
   const { isLoading, data } = useResources();
 
   if (isLoading) return <LoadingSpinner />;

@@ -13,6 +13,7 @@ setup:
 	php artisan migrate:fresh --seed
 	npm install
 	npm run build
+	php ./vendor/bin/grumphp git:init
 
 # Lint files
 @lint:

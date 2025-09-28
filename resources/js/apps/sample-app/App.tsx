@@ -1,10 +1,10 @@
 import { AppProvider } from '@/providers/app';
-import { Laravel } from '@/features/laravel/components/Laravel';
+import { SampleApp } from '@/features/sample-app/components/SampleApp';
 
 function App() {
   return (
     <AppProvider>
-      <Laravel />
+      <SampleApp />
     </AppProvider>
   );
 }

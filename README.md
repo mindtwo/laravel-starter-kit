@@ -53,7 +53,7 @@
 Clone and set up the project:
 
 ```bash
-git git@github.com:mindtwo/laravel-starter-kit.git
+git git@github.com:mindtwo/sample-app-starter-kit.git
 just --list # Check out available tasks
 just setup
 npm i
@@ -74,6 +74,6 @@ won't be merged.
 
 ## Tests
 
-Run the tests with `just test`. This will run both unit and integration tests for all modules. A
-code coverage report can be generated with `just coverage`. This will take **significantly** longer
-than just running the tests normally.
+Run the tests with `just test`. This will run both unit and integration tests. A code coverage
+report can be generated with `just coverage`. This will take **significantly** longer than just
+running the tests normally.

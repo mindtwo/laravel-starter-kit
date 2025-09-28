@@ -12,7 +12,7 @@
 @endpush
 
 @push('scripts')
-  @vite(['resources/js/apps/laravel/laravel.tsx'])
+  @vite(['resources/js/apps/sample-app/sample-app.tsx'])
 @endpush
 
 @section('body')

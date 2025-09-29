@@ -40,8 +40,8 @@
 >> Linting .......................................................................... </a>
 <a href="#tests"
 >> Tests ............................................................................ </a>
-<a href="#deployment"
->> Deployment ....................................................................... </a>
+<a href="#documentation"
+>> Documentation .................................................................... </a>
 </pre>
 
 ## Related Projects
@@ -77,3 +77,8 @@ won't be merged.
 Run the tests with `just test`. This will run both unit and integration tests. A code coverage
 report can be generated with `just coverage`. This will take **significantly** longer than just
 running the tests normally.
+
+## Documentation
+
+The documentation can be found at
+[mindtwo.github.io/laravel-starter-kit](https://mindtwo.github.io/laravel-starter-kit).

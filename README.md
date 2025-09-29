@@ -53,7 +53,7 @@
 Clone and set up the project:
 
 ```bash
-git git@github.com:mindtwo/sample-app-starter-kit.git
+git git@github.com:mindtwo/laravel-starter-kit.git
 just --list # Check out available tasks
 just setup
 npm i

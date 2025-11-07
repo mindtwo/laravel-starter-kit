@@ -2,5 +2,11 @@
   "singleQuote": true,
   "proseWrap": "always",
   "trailingComma": "es5",
-  "printWidth": 100
+  "tabWidth": 2,
+  "printWidth": 100,
+  "plugins": [
+    "prettier-plugin-blade"
+  ],
+  "semi": true,
+  "arrowParens": "always"
 }

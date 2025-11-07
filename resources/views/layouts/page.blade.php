@@ -1,9 +1,12 @@
 @extends('layouts.master')
 
-@section('html.title')@yield('title') - {{ config('app.name') }} @endsection
+@section('html.title')
+  @yield('title')
+  - {{ config('app.name') }}
+@endsection
 
 @section('html.meta.custom')
-  <link rel="canonical" href="{{ trim(url()->current(), '/') }}">
+  <link rel="canonical" href="{{ trim(url()->current(), '/') }}" />
   @viteReactRefresh
 @endsection
 
@@ -26,4 +29,3 @@
     </div>
   </main>
 @endsection
-

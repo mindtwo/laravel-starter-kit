@@ -72,7 +72,8 @@ design patterns.
 
 ### Core Principles
 
-1. **Keep Controllers Slim**: Controllers should only handle HTTP concerns (validation, responses)
+1. **Keep Controllers Slim**: Controllers should only handle HTTP concerns (pass through request
+   data, handle responses). Validation belongs in form request classes.
 2. **Keep Models Slim**: Models should define relationships, casts, and simple scopes
 3. **Extract Business Logic**: Application logic belongs in service classes
 4. **Avoid Magic**: Prefer dependency injection over facades; be explicit

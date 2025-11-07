@@ -139,16 +139,16 @@ class OrderController extends Controller
         private OrderService $orders,
     ) {}
 
-    public function store(CreateOrderRequest $request)
+    public function store(CreateOrderRequest $request): RedirectResponse
     {
         $order = $this->orders->createOrder(
             items: $request->validated('items'),
             userId: $request->user()->id
         );
 
-        return redirect()
-            ->route('orders.show', $order)
-            ->with('success', 'Order created successfully');
+        flash()->success('Order created successfully');
+
+        return redirect()->route('orders.show', $order);
     }
 }
 ```
@@ -199,10 +199,7 @@ class ProductRepository extends AbstractRepository
 
 ```php
 // Controller or Service - no repository needed
-$activeProducts = Product::query()
-    ->where('status', '=', 'active')
-    ->latest()
-    ->paginate();
+$activeProducts = Product::query()->where('status', '=', 'active')->latest()->paginate();
 ```
 
 ### Pipeline Pattern
@@ -266,29 +263,25 @@ use Chiiya\Common\Presenter\Presenter;
  */
 class ProductPresenter extends Presenter
 {
-    public function __construct(
-        private Product $product
-    ) {}
-
     public function formattedPrice(): string
     {
-        return number_format($this->product->price, 2) . ' €';
+        return number_format($this->entity->price, 2) . ' €';
     }
 
     public function discountPercentage(): ?int
     {
-        if (!$this->product->original_price) {
+        if (! $this->entity->original_price) {
             return null;
         }
 
         return (int) round(
-            (1 - $this->product->price / $this->product->original_price) * 100
+            (1 - $this->entity->price / $this->entity->original_price) * 100
         );
     }
 
     public function statusBadgeClass(): string
     {
-        return match($this->product->status) {
+        return match($this->entity->status) {
             'active' => 'badge-success',
             'draft' => 'badge-warning',
             'archived' => 'badge-secondary',
@@ -299,7 +292,7 @@ class ProductPresenter extends Presenter
     public function shareUrl(): string
     {
         return route('products.show', [
-            'product' => $this->product->slug,
+            'product' => $this->entity->slug,
             'ref' => 'share',
         ]);
     }
@@ -329,7 +322,7 @@ class Product extends Model
     <span class="discount">-{{ $discount }}%</span>
   @endif
 
-  <span class="{{ $product->presnet()->statusBadgeClass() }}">
+  <span class="{{ $product->present()->statusBadgeClass() }}">
     {{ $product->status }}
   </span>
 </div>
@@ -425,10 +418,11 @@ class ProductPolicy
 
 ### Dependency Injection
 
-Always use dependency injection instead of facades:
+Always try to use dependency injection instead of facades:
 
 ```php
 // ❌ Don't
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class OrderService
@@ -436,21 +430,25 @@ class OrderService
     public function sendConfirmation(Order $order): void
     {
         Mail::to($order->user)->send(new OrderConfirmation($order));
+        Log::debug('Mail sent');
     }
 }
 
 // ✅ Do
 use Illuminate\Contracts\Mail\Mailer;
+use Psr\Log\LoggerInterface;
 
 class OrderService
 {
     public function __construct(
-        private Mailer $mailer
+        private Mailer $mailer,
+        private LoggerInterface $logger,
     ) {}
 
     public function sendConfirmation(Order $order): void
     {
         $this->mailer->to($order->user)->send(new OrderConfirmation($order));
+        $this->logger->debug('Mail sent');
     }
 }
 ```
@@ -476,8 +474,6 @@ app/
 ├── Models/
 ├── Observers/
 ├── Pipelines/
-│   ├── Order/
-│   └── Product/
 ├── Policies/
 ├── Presenters/
 ├── Providers/

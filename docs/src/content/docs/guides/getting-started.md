@@ -23,14 +23,6 @@ npm run build
 
 Your application should now be running at `https://your-project-name.test`.
 
-### Environment Configuration
-
-1. Copy `.env.example` to `.env` if not already done by `just setup`
-2. Configure your database credentials
-3. Set `APP_NAME`, `APP_URL`, and other environment-specific variables
-4. Generate application key: `php artisan key:generate`
-5. Run migrations: `php artisan migrate`
-
 ## Post-Setup Configuration
 
 After the initial setup, customize these configurations for your specific project:

@@ -8,6 +8,10 @@
         "npm"
     ],
     "rangeStrategy": "widen",
+    "lockFileMaintenance": {
+        "enabled": true,
+        "automerge": false
+    },
     "packageRules": [
         {
             "matchManagers": [

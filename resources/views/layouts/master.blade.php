@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="de" class="@yield('html-class')">
-@include('layouts.partials.head')
+  @include('layouts.partials.head')
 
-<body class="@yield('body-class')">
-@include('layouts.partials.javascript')
+  <body class="@yield('body-class')">
+    @include('layouts.partials.javascript')
 
-@yield('body')
+    @yield('body')
 
-@stack('scripts')
-</body>
+    @stack('scripts')
+  </body>
 </html>

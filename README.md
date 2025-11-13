@@ -11,7 +11,7 @@
   </strong>
 
   <p align="center">
-    A Laravel 12 starter kit with Filament, React and Vite
+    A Laravel 12 starter kit with Filament, Tailwind and Typescript
   </p>
 
   <p align="center">
@@ -24,7 +24,8 @@
 
   <p align="center">
     <img src="https://www.vectorlogo.zone/logos/laravel/laravel-icon.svg" height="45" />
-    <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-ar21.svg" height="45" />
+    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" height="45" />
+    <img src="https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg" height="45" />
   </p>
 </div>
 <br />
@@ -53,13 +54,17 @@
 Clone and set up the project:
 
 ```bash
-git git@github.com:mindtwo/laravel-starter-kit.git
+git clone git@github.com:mindtwo/laravel-starter-kit.git your-project-name
+cd your-project-name
 just --list # Check out available tasks
 just setup
 npm i
 npm run build
-# Application running at https://laravel-starter-kit.test
 ```
+
+Your application should now be running at `https://your-project-name.test`.
+
+Make sure you read the [getting started guide](docs/src/content/docs/guides/getting-started.md).
 
 ## Linting
 

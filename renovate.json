@@ -1,0 +1,81 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    // Start from Renovate's recommended base rules
+    "extends": [
+        "config:recommended"
+    ],
+    // Explicitly enable managers we care about
+    "enabledManagers": [
+        "composer",
+        "npm"
+    ],
+    // Default behavior for version ranges:
+    // - try to widen the range (e.g. ^1.2.3 -> ^1.4.0)
+    "rangeStrategy": "widen",
+    "packageRules": [
+        // Composer rules
+        {
+            "matchManagers": [
+                "composer"
+            ],
+            "groupName": "composer (minor & patch)",
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "automerge": true,
+            "automergeType": "branch"
+        },
+        {
+            "matchManagers": [
+                "composer"
+            ],
+            "groupName": "composer (major)",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "automerge": false
+        },
+        // npm rules
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "groupName": "npm (minor & patch)",
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "automerge": true,
+            "automergeType": "branch"
+        },
+        {
+            "matchManagers": [
+                "npm"
+            ],
+            "groupName": "npm (major)",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "automerge": false
+        },
+        // Dev dependencies – often safe to automerge
+        {
+            "matchManagers": [
+                "npm",
+                "composer"
+            ],
+            "matchDepTypes": [
+                "devDependencies",
+                "require-dev"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "groupName": "dev deps (minor & patch)",
+            "automerge": true,
+            "automergeType": "branch"
+        }
+    ]
+}

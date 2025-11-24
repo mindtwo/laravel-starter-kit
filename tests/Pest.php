@@ -16,7 +16,10 @@ use Tests\TestCase;
 
 pest()->extend(TestCase::class)
     ->use(RefreshDatabase::class)
-    ->in(__DIR__);
+    ->in(__DIR__.'/Feature');
+
+pest()->extend(TestCase::class)
+    ->in(__DIR__.'/Unit');
 
 // Extend Pest with custom expectations
 expect()->extend('toThrowIf', function (

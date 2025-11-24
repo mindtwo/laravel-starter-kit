@@ -3,13 +3,12 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@/*": [
-                "./resources/js/*"
-            ]
+            "@/*": ["./resources/js/*"]
         },
         "module": "ESNext",
         "moduleResolution": "bundler",
-        "jsx": "react-jsx",
+        "jsx": "preserve",
+        "jsxImportSource": "vue",
         "strict": true,
         "isolatedModules": true,
         "target": "ESNext",
@@ -21,20 +20,9 @@
         "skipLibCheck": true,
         "verbatimModuleSyntax": true,
         "noEmit": true,
-        "lib": [
-            "esnext",
-            "dom",
-            "dom.iterable",
-            "webworker"
-        ],
-        "types": [
-            "vite/client"
-        ]
+        "lib": ["esnext", "dom", "dom.iterable", "webworker"],
+        "types": ["vite/client"]
     },
-    "include": [
-        "./resources/js"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["./resources/js"],
+    "exclude": ["node_modules"]
 }

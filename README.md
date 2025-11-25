@@ -58,8 +58,6 @@ git clone git@github.com:mindtwo/laravel-starter-kit.git your-project-name
 cd your-project-name
 just --list # Check out available tasks
 just setup
-npm i
-npm run build
 ```
 
 Your application should now be running at `https://your-project-name.test`.

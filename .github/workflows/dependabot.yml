@@ -16,13 +16,26 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Add label for possibly breaking changes
+        if: |
+          contains(steps.dependabot-metadata.outputs.dependency-names, 'livewire/') ||
+          contains(steps.dependabot-metadata.outputs.dependency-names, 'flux-ui/')
+        run: gh pr edit "$PR_URL" --add-label "possibly-breaking"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Enable auto-merge for Dependabot PRs
-        if: ${{ steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' }}
+        if: |
+          steps.dependabot-metadata.outputs.update-type != 'version-update:semver-major' &&
+          !contains(github.event.pull_request.labels.*.name, 'possibly-breaking')
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}

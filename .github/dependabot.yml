@@ -13,19 +13,38 @@ updates:
       interval: daily
       time: "03:00"
     open-pull-requests-limit: 10
+    # Groups are required to get a single PR
     groups:
       composer-minor-patch:
         update-types:
         - "minor"
         - "patch"
+        exclude-patterns:
+        - "livewire/*"
+        - "flux-ui/*"
       composer-major:
         update-types:
         - "major"
+        exclude-patterns:
+        - "livewire/*"
+        - "flux-ui/*"
       composer-dev-minor-patch:
         dependency-type: "development"
         update-types:
         - "minor"
         - "patch"
+        exclude-patterns:
+        - "livewire/*"
+        - "flux-ui/*"
+      livewire-updates:
+        patterns:
+        - "livewire/*"
+      flux-ui-updates:
+        patterns:
+        - "flux-ui/*"
+    labels:
+    - "dependencies"
+    - "composer"
 
   # Enable npm update
   - package-ecosystem: "npm"
@@ -35,6 +54,7 @@ updates:
       time: "03:00"
     open-pull-requests-limit: 10
     versioning-strategy: increase
+    # Groups are required to get a single PR
     groups:
       npm-minor-patch:
         update-types:

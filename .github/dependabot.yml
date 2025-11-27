@@ -36,6 +36,7 @@ updates:
         exclude-patterns:
         - "livewire/*"
         - "flux-ui/*"
+      # Separate grouping for livewire and flux
       livewire-updates:
         patterns:
         - "livewire/*"

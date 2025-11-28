@@ -1,0 +1,85 @@
+# Dependabot config
+version: 2
+
+updates:
+  # Update composer dependencies
+  - package-ecosystem: "composer"
+    directory: "/"
+
+    # Uncomment to activate usage of private registry
+    # registries:
+    # - m2packagist
+    schedule:
+      interval: daily
+      time: "03:00"
+    open-pull-requests-limit: 10
+    # Groups are required to get a single PR
+    groups:
+      composer-minor-patch:
+        update-types:
+        - "minor"
+        - "patch"
+        exclude-patterns:
+        - "livewire/*"
+        - "flux-ui/*"
+      composer-major:
+        update-types:
+        - "major"
+        exclude-patterns:
+        - "livewire/*"
+        - "flux-ui/*"
+      composer-dev-minor-patch:
+        dependency-type: "development"
+        update-types:
+        - "minor"
+        - "patch"
+        exclude-patterns:
+        - "livewire/*"
+        - "flux-ui/*"
+      # Separate grouping for livewire and flux
+      livewire-updates:
+        patterns:
+        - "livewire/*"
+      flux-ui-updates:
+        patterns:
+        - "flux-ui/*"
+    labels:
+    - "dependencies"
+    - "composer"
+
+  # Enable npm update
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "03:00"
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    # Groups are required to get a single PR
+    groups:
+      npm-minor-patch:
+        update-types:
+        - "minor"
+        - "patch"
+      npm-major:
+        update-types:
+        - "major"
+      npm-dev-minor-patch:
+        dependency-type: "development"
+        update-types:
+        - "minor"
+        - "patch"
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+# Private registries
+registries:
+  m2packagist:
+    type: composer-repository
+    url: https://repo.packagist.com/mindtwo/
+    username: ${{secrets.MINDTWO_PACKAGIST_USERNAME}}
+    password: ${{secrets.MINDTWO_PACKAGIST_PASSWORD}}

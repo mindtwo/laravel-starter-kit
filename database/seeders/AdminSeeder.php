@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace Database\Seeders;
 
@@ -11,6 +11,5 @@ class AdminSeeder
             'email' => 'witte@mindtwo.de',
         ],
     ];
-
     public static array $permissions = [];
 }

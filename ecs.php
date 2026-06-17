@@ -6,11 +6,12 @@ use Symplify\EasyCodingStandard\Config\ECSConfig;
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/bootstrap/app.php';
 
-return static function (ECSConfig $config): void {
-    $config->import(CodeStyle::ECS);
-    $config->paths([
+return ECSConfig::configure()
+    ->withSets([CodeStyle::ECS])
+    ->withPaths([
         app_path(),
         config_path(),
+        base_path('database'),
         base_path('tests'),
+        base_path('routes'),
     ]);
-};

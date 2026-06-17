@@ -6,16 +6,14 @@ use Rector\Config\RectorConfig;
 require __DIR__.'/vendor/autoload.php';
 require __DIR__.'/bootstrap/app.php';
 
-return static function (RectorConfig $config): void {
-    $config->parallel();
-    $config->paths([
+return RectorConfig::configure()
+    ->withParallel()
+    ->withPaths([
         app_path(),
         config_path(),
+        base_path('database'),
         base_path('tests'),
-    ]);
-    $config->skip([
-        __DIR__.'/app/*/node_modules/*',
-    ]);
-    $config->importNames();
-    $config->import(CodeStyle::RECTOR);
-};
+        base_path('routes'),
+    ])
+    ->withImportNames()
+    ->withSets([CodeStyle::RECTOR]);

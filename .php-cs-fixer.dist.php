@@ -13,6 +13,8 @@ return (new Config)
             ->in(app_path())
             ->in(config_path())
             ->in(base_path('tests'))
+            ->in(base_path('database'))
+            ->in(base_path('routes'))
             ->exclude('node_modules'),
     )
     ->setRules([

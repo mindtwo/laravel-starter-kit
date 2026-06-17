@@ -1,13 +1,14 @@
 #! usr/bin/bash
 
-USR=$(stat -c '%U' ./composer.json)
-runuser -u $USR -- /bin/php /usr/local/sbin/composer install --no-dev
-php artisan config:clear
-php artisan route:clear
-php artisan view:clear
-php artisan event:clear
-php artisan clear-compiled
-php artisan view:cache
-php artisan config:cache
-php artisan route:cache
-php artisan icons:cache
+$FORGE_COMPOSER install --no-dev
+npm ci || npm install
+npm run build
+$FORGE_PHP artisan config:clear
+$FORGE_PHP artisan route:clear
+$FORGE_PHP artisan view:clear
+$FORGE_PHP artisan event:clear
+$FORGE_PHP artisan clear-compiled
+$FORGE_PHP artisan view:cache
+$FORGE_PHP artisan config:cache
+$FORGE_PHP artisan route:cache
+$FORGE_PHP artisan icons:cache

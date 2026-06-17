@@ -8,6 +8,7 @@ default:
 setup:
 	cp -n .env.example .env
 	@test -d public/storage || (cd public && ln -s ../storage/app/public storage)
+	mysql -u root -h 127.0.0.1 -P 3306 -e "CREATE DATABASE starter_kit"
 	composer install
 	php artisan key:generate
 	php artisan migrate:fresh --seed

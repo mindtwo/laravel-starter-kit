@@ -51,9 +51,6 @@ jobs:
             - name: Directory Permissions
               run: chmod -R 755 storage bootstrap/cache
 
-            - name: Install Passport
-              run: php artisan passport:keys
-
             - name: Run package discovery
               env:
                   DB_CONNECTION: sqlite

@@ -66,14 +66,15 @@ Make sure you read the [getting started guide](docs/src/content/docs/guides/gett
 
 ## Linting
 
-To lint (and fix) your PHP code, run the following command:
+To lint and auto-fix the code — PHP (ECS, PHP-CS-Fixer, Rector, TLint) and the
+frontend (oxlint, oxfmt) — run:
 
 ```bash
 just lint
 ```
 
-Make sure your code passes before pushing, since otherwise the build will fail and your pull request
-won't be merged.
+Static analysis runs separately with `just quality` (PHPStan / Larastan). Make sure both pass
+before pushing, since otherwise the build will fail and your pull request won't be merged.
 
 ## Tests
 

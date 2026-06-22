@@ -8,6 +8,7 @@ default:
 setup:
 	cp -n .env.example .env
 	@test -d public/storage || (cd public && ln -s ../storage/app/public storage)
+	mysql -u root -h 127.0.0.1 -P 3306 -e "CREATE DATABASE starter_kit"
 	composer install
 	php artisan key:generate
 	php artisan migrate:fresh --seed
@@ -21,6 +22,8 @@ setup:
 	./vendor/bin/php-cs-fixer fix
 	./vendor/bin/rector process
 	./vendor/bin/tlint lint
+	npm run lint:fix
+	npm run format
 
 # Check code quality
 @quality:
@@ -31,10 +34,10 @@ setup:
 	echo "Running unit and integration tests"; \
 	vendor/bin/pest
 
-# Run tests and create code-coverage report with Xdebug
+# Run tests and create code-coverage report with Xdebug (via Herd)
 @coverage:
 	echo "Running unit and integration tests with coverage"; \
-	vendor/bin/pest --coverage --min=80 --compact
+	herd coverage vendor/bin/pest --coverage --min=80 --compact
 	just type-coverage
 
 # Run type coverage

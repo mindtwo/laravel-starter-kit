@@ -15,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //
     })
+    // Register event listeners explicitly (e.g. in AppServiceProvider) rather than
+    // having Laravel auto-discover everything in app/Listeners.
+    ->withEvents(discover: false)
     ->withExceptions(function (Exceptions $exceptions) {
         Integration::handles($exceptions);
     })->create();

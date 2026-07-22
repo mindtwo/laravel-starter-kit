@@ -73,16 +73,16 @@
         },
         {
             "name": "bepsvpt/secure-headers",
-            "version": "9.1.0",
+            "version": "9.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bepsvpt/secure-headers.git",
-                "reference": "92499bf1df63a9b63ad3e1b49d4b4146ad367f0d"
+                "reference": "dd972411f9a231259cdd7a66c2d9fa3f1c39858a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bepsvpt/secure-headers/zipball/92499bf1df63a9b63ad3e1b49d4b4146ad367f0d",
-                "reference": "92499bf1df63a9b63ad3e1b49d4b4146ad367f0d",
+                "url": "https://api.github.com/repos/bepsvpt/secure-headers/zipball/dd972411f9a231259cdd7a66c2d9fa3f1c39858a",
+                "reference": "dd972411f9a231259cdd7a66c2d9fa3f1c39858a",
                 "shasum": ""
             },
             "require": {
@@ -143,7 +143,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bepsvpt/secure-headers/issues",
-                "source": "https://github.com/bepsvpt/secure-headers/tree/9.1.0"
+                "source": "https://github.com/bepsvpt/secure-headers/tree/9.1.1"
             },
             "funding": [
                 {
@@ -151,7 +151,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-03-17T22:51:53+00:00"
+            "time": "2026-07-21T05:26:45+00:00"
         },
         {
             "name": "blade-ui-kit/blade-heroicons",
@@ -2378,16 +2378,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v13.20.0",
+            "version": "v13.21.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b9d1bccad5fbc32578dca22566bb11e7c0e545d7"
+                "reference": "303b5f8dc899f89e8c38c350b639b8fbd193ed16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b9d1bccad5fbc32578dca22566bb11e7c0e545d7",
-                "reference": "b9d1bccad5fbc32578dca22566bb11e7c0e545d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/303b5f8dc899f89e8c38c350b639b8fbd193ed16",
+                "reference": "303b5f8dc899f89e8c38c350b639b8fbd193ed16",
                 "shasum": ""
             },
             "require": {
@@ -2601,7 +2601,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-07-14T14:22:22+00:00"
+            "time": "2026-07-21T14:27:35+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2664,16 +2664,16 @@
         },
         {
             "name": "laravel/serializable-closure",
-            "version": "v2.0.13",
+            "version": "v2.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/serializable-closure.git",
-                "reference": "b566ee0dd251f3c4078bed003a7ce015f5ea6dce"
+                "reference": "dccd8bcb851bb03fcc005df650b708b57cc52661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/b566ee0dd251f3c4078bed003a7ce015f5ea6dce",
-                "reference": "b566ee0dd251f3c4078bed003a7ce015f5ea6dce",
+                "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/dccd8bcb851bb03fcc005df650b708b57cc52661",
+                "reference": "dccd8bcb851bb03fcc005df650b708b57cc52661",
                 "shasum": ""
             },
             "require": {
@@ -2721,7 +2721,7 @@
                 "issues": "https://github.com/laravel/serializable-closure/issues",
                 "source": "https://github.com/laravel/serializable-closure"
             },
-            "time": "2026-04-16T14:03:50+00:00"
+            "time": "2026-07-21T16:49:22+00:00"
         },
         {
             "name": "league/commonmark",
@@ -11659,16 +11659,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v5.20.0",
+            "version": "v5.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "38ec6e6006a67e05e0c476c5f8ef3550b72e43d8"
+                "reference": "f00f45a59843329b97aa238f28da594f3b7d4aa7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/38ec6e6006a67e05e0c476c5f8ef3550b72e43d8",
-                "reference": "38ec6e6006a67e05e0c476c5f8ef3550b72e43d8",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/f00f45a59843329b97aa238f28da594f3b7d4aa7",
+                "reference": "f00f45a59843329b97aa238f28da594f3b7d4aa7",
                 "shasum": ""
             },
             "require": {
@@ -11722,9 +11722,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v5.20.0"
+                "source": "https://github.com/laravel/telescope/tree/v5.21.0"
             },
-            "time": "2026-04-06T12:52:26+00:00"
+            "time": "2026-07-20T19:44:45+00:00"
         },
         {
             "name": "laravel/tinker",

@@ -20,7 +20,7 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^4.2",
         "barryvdh/laravel-ide-helper": "^3.7",
-        "chiiya/laravel-code-style": "^3.2",
+        "chiiya/laravel-code-style": "^4.0",
         "fakerphp/faker": "^1.23",
         "laravel/boost": "^2.0",
         "laravel/pail": "^1.2.2",
